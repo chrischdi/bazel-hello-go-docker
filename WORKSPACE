@@ -8,3 +8,10 @@ load("@io_bazel_rules_go//go:def.bzl", "go_rules_dependencies", "go_register_too
 go_rules_dependencies()
 go_register_toolchains()
 
+local_repository(
+    name = "io_bazel_rules_docker",
+		path = "/home/christi/git/rules_docker",
+)
+
+load("@io_bazel_rules_docker//go:image.bzl", container_repositories = "repositories")
+container_repositories()
